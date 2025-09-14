@@ -1,0 +1,48 @@
+h1{
+    color: rgb(16, 145, 189);
+}
+#bird{
+ width:100px;
+ position: absolute;top: 90px;left:200px;
+
+}
+#gameCanvas{
+
+    background:url("natural_view.png") ;
+   
+}
+
+div{
+    position: relative;
+    width: 150cap;
+    
+}
+.buttons{
+    width: 200px;
+    height: 100px;
+    font-size: 55px;
+    font-weight: bold;
+    font-style: italic;
+    border: 5px solid black;
+    border-radius: 35px;
+
+}
+#exitbutton{
+    background: #f7ae31;
+    color: red;
+}
+#resume{
+    background-color: rgb(3, 109, 3);
+    color: rgb(24, 219, 160);
+    position:absolute;
+    right:0 ;
+    width:250px ;
+    height: 122px;
+    
+    
+    
+}
+
+#gameCanvas{
+    color: greenyellow;
+}

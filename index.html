@@ -1,0 +1,284 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+    <canvas id="gameCanvas" style="border: 5px solid black;" width="1600" height="900"></canvas><br>
+    <br>
+    <br><br><br>
+    <div>
+     <button class="buttons" id="exitbutton">exit</button>
+     <button class="buttons" id="resume">New Game</button>
+    </div>
+    
+    </body>
+    <script>
+       let i=true;
+        async function main()
+        {
+            console.log("main class called");
+           
+            let canvas=document.getElementById("gameCanvas");
+            let ctx=canvas.getContext("2d");
+            let y=0;
+            let yVelocity=0;
+            let yAcc=9.8;
+            let towers1X=300;
+            let towers2X=650;
+            let towers3X=900;
+            let towers4X=1200;
+            let towers5X=1500;
+            let towers6X=1800;
+            let TOWER_HEIGHT2=350;
+            let TOWER_HEIGHT3=150;
+            let TOWER_HEIGHT1=250;
+            let TOWER_HEIGHT4=350;
+            let TOWER_HEIGHT5=250;
+            let TOWER_HEIGHT6=150;
+
+            document.onkeydown=function(){
+                yVelocity= -50;
+                
+            }
+            
+         while(i)
+         {
+                
+            
+            
+             if(towers1X==0)
+             {
+              towers1X=1800; 
+               
+             }
+             if(towers2X==0)
+             {
+              towers2X=1800; 
+              
+             }
+             if(towers3X==0)
+             {
+              towers3X=1800; 
+              
+             }
+             if(towers4X==0)
+             {
+              towers4X=1800;
+             }
+             if(towers5X==0)
+             {
+              towers5X=1800; 
+               
+             } 
+             if(towers6X==0)
+             {
+              towers6X=1800; 
+              
+             }
+             if (y>900)
+             {
+                y=0;
+               i=false; 
+             }
+            else{
+             console.log("inside for loop");
+             yVelocity=yVelocity+0.33*yAcc;
+
+             y=y+yVelocity*0.33;
+            
+             ctx.clearRect(10,0,1600,900);
+             ctx.beginPath();
+             ctx.rect(10,y,50,50);
+             ctx.fill();
+
+             //TOWER 1
+             ctx.beginPath();
+             ctx.rect(towers1X,0,50,TOWER_HEIGHT1);
+            
+             ctx.fill();
+
+
+             ctx.beginPath();
+             ctx.rect(towers1X,(900-(900-TOWER_HEIGHT1))+250,50,(900-(900-(900-TOWER_HEIGHT1))+250));
+             ctx.fill();
+             towers1X=towers1X-1;
+
+             // TOWER 2
+             ctx.beginPath();
+             ctx.rect(towers2X,0,50,TOWER_HEIGHT2);
+             ctx.fill();
+             
+
+             ctx.beginPath();
+             ctx.rect(towers2X,(900-(900-TOWER_HEIGHT2))+250,50,(900-(900-(900-TOWER_HEIGHT2))+250));
+
+             ctx.fill();
+             towers2X=towers2X-1;
+             
+
+             //TOWER 3
+             ctx.beginPath();
+             ctx.rect(towers3X,0,50,TOWER_HEIGHT3);
+             ctx.fill();
+
+
+             ctx.beginPath();
+             ctx.rect(towers3X,(900-(900-TOWER_HEIGHT3))+250,50,(900-
+             (900-(900-TOWER_HEIGHT3))+250));
+             ctx.fill();
+             towers3X=towers3X-1;
+
+             //TOWER 4
+             ctx.beginPath();
+             ctx.rect(towers4X,0,50,TOWER_HEIGHT4);
+             ctx.fill();
+
+
+             ctx.beginPath();
+             ctx.rect(towers4X,(900-(900-TOWER_HEIGHT4))+250,50,(900-(900-(900-TOWER_HEIGHT4))+250));
+
+             
+             ctx.fill();
+             towers4X=towers4X-1;
+
+             //TOWER 5
+             ctx.beginPath();
+             ctx.rect(towers5X,0,50,TOWER_HEIGHT5);
+             ctx.fill();
+
+
+             ctx.beginPath();
+             ctx.rect(towers5X,(900-(900-TOWER_HEIGHT5))+250,50,(900-(900-(900-TOWER_HEIGHT5))+250));
+
+             ctx.fill();
+             towers5X=towers5X-1;
+
+             //TOWER 6
+             ctx.beginPath();
+             ctx.rect(towers6X,0,50,TOWER_HEIGHT6);
+             ctx.fill();
+
+
+             ctx.beginPath();
+             ctx.rect(towers6X,(900-(900-TOWER_HEIGHT6))+250,50,(900-(900-(900-TOWER_HEIGHT6))+250));
+
+            
+             ctx.fill();
+             towers6X=towers6X-1;
+             
+
+             if(towers1X<=60||(towers1X+50)<50)
+             {
+                if(TOWER_HEIGHT1>y)
+             {
+                i=false;
+
+             }
+             if(((900-(900-TOWER_HEIGHT1))+200)<y){
+                i=false;
+             }
+             }
+
+
+             if(towers2X<=60||(towers2X+50)<50)
+             {
+                if(TOWER_HEIGHT2>y)
+             {
+                i=false;
+
+             }
+             if(((900-(900-TOWER_HEIGHT2))+200)<y){
+                i=false;
+             }
+             }
+
+
+             
+             if(towers3X<=60||(towers3X+50)<50)
+             {
+                if(TOWER_HEIGHT3>y)
+             {
+                i=false;
+
+             }
+             if(((900-(900-TOWER_HEIGHT3))+200)<y){
+                i=false;
+             }
+             }
+
+
+             
+             if(towers4X<=60||(towers4X+50)<50)
+             {
+                if(TOWER_HEIGHT4>y)
+             {
+                i=false;
+
+             }
+             if(((900-(900-TOWER_HEIGHT4))+200)<y){
+                i=false;
+             }
+             }
+
+
+             
+             if(towers5X<=60||(towers5X+50)<50)
+             {
+                if(TOWER_HEIGHT5>y)
+             {
+                i=false;
+
+             }
+             if(((900-(900-TOWER_HEIGHT5))+200)<y){
+                i=false;
+             }
+             }
+
+
+
+             if(towers6X<=60||(towers6X+50)<50)
+             {
+                if(TOWER_HEIGHT6>y)
+             {
+                i=false;
+
+             }
+             if(((900-(900-TOWER_HEIGHT6))+200)<y){
+                i=false;
+             }
+             }
+             
+             
+
+             await new Promise((r) => setTimeout(r,0.033333333*1000));
+             document.getElementById("exitbutton").addEventListener("click",()=>{i=false;});
+            }
+         }
+      //    function gameOver() {
+      //       i = false;
+      //      alert("Game Over! Click New Game to restart.");
+      //   }
+
+      //   // When game ends, call gameOver()
+      //   if (y > 900) {
+      //    gameOver();
+      //   }
+
+        // Attach New Game button listener ONCE
+        document.getElementById("resume").addEventListener("click", () => {
+         if (!i) {
+          i = true;
+           main();  // restart the game
+         }
+        });
+
+          
+        }
+        
+        
+        main();
+    </script>
+    <link rel="stylesheet" href="index.js">
+</html>
+
