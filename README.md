@@ -1,1 +1,1 @@
-This is game like flappy-bird this is my first project to try my own . I have use canvas ,javascrpt,css,html only to create this.I know this is not good now but as i learn will learn new thing i will be add those also.
+This is like flappy-bird game and also this is my first project that I have made by my own . I have used canvas ,javascrpt,css,html only to create this.I know this is not much good but as well as i will be learn new thing definitely I will be add those also.
